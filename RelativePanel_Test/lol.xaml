@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="RelativePanel_Test.lol"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RelativePanel_Test"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock TextWrapping="Wrap">
+            LOL Match 1 13:00-15:00<LineBreak/>
+            LOL Match 2 13:00-15:00<LineBreak/>
+             LOL Match 3 13:00-15:00<LineBreak/>
+             LOL Match 4 13:00-15:00<LineBreak/>
+             LOL Match 5 13:00-15:00<LineBreak/>
+             LOL Match 6 13:00-15:00<LineBreak/>
+             LOL Match 7 13:00-15:00<LineBreak/>
+        </TextBlock>
+        <TextBox Name="forum" Grid.Row="1" Height="200" ></TextBox>
+        <Button Grid.Row="2" Name="submit" Click="submit_Click" Margin="0,0,0,60">Submit</Button>
+    </Grid>
+</Page>

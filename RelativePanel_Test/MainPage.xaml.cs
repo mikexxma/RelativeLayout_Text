@@ -26,5 +26,52 @@ namespace RelativePanel_Test
         {
             this.InitializeComponent();
         }
+
+        private void sc2_Click(object sender, RoutedEventArgs e)
+        {
+            if (mySplitView.IsPaneOpen) { mySplitView.IsPaneOpen = !mySplitView.IsPaneOpen; }
+            MyFrame.Navigate(typeof(sc2));
+        }
+
+        private void sfv_Click(object sender, RoutedEventArgs e)
+        {
+            if (mySplitView.IsPaneOpen) { mySplitView.IsPaneOpen = !mySplitView.IsPaneOpen; }
+            MyFrame.Navigate(typeof(stv));
+        }
+
+        private void lol_Click(object sender, RoutedEventArgs e)
+        {
+            if (mySplitView.IsPaneOpen) { mySplitView.IsPaneOpen = !mySplitView.IsPaneOpen; }
+            MyFrame.Navigate(typeof(lol));
+        }
+
+        private void menu_Click(object sender, RoutedEventArgs e)
+        {
+            //永远和当前状态相反 当点击menu 的时候
+            mySplitView.IsPaneOpen = !mySplitView.IsPaneOpen;
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            if (MyFrame.CanGoBack)
+            {
+                MyFrame.GoBack();
+            }
+        }
+
+        private void Forward_Click(object sender, RoutedEventArgs e)
+        {
+            //myframe 是当前page包含的fame
+            if (MyFrame.CanGoForward)
+            {
+                MyFrame.GoForward();
+            }
+        }
+
+        private void navigateToAnotherPage_Click(object sender, RoutedEventArgs e)
+        {
+            //大写的frame 是指当前page所在的父frame 
+            Frame.Navigate(typeof(sc2));
+        }
     }
 }

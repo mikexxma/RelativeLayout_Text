@@ -14,17 +14,42 @@
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         <RelativePanel Grid.Row="0">
-            <TextBlock Text="Title" FontSize="40" FontStyle="Oblique"></TextBlock>
+            <Button Name="menu" Content="Menu" Margin="5,10,0,10" Click="menu_Click"></Button>
+            <Button Name="Back" Content="Back" RelativePanel.RightOf="menu" Margin="5,10,0,10" Click="Back_Click"></Button>
+            <Button Name="Forward" Content="Forward" RelativePanel.RightOf="Back" Margin="5,10,0,10" Click="Forward_Click"></Button>
             <Button Name="searchButton" RelativePanel.AlignVerticalCenterWithPanel="True" Content="Search" FontSize="20" RelativePanel.AlignRightWithPanel="True" VerticalAlignment="Center" ></Button>
             <TextBox  Name="searchText" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.LeftOf="searchButton" Width="80"></TextBox>
-            
         </RelativePanel>
         <Border Grid.Row="2" BorderBrush="BurlyWood" Background="Aquamarine">
             <RelativePanel>
-                <TextBlock Text="item: 10"></TextBlock>
+                <Button Name="navigateToAnotherPage" VerticalAlignment="Center" Margin="10,0,0,0"  Content="toSC2 page" Click="navigateToAnotherPage_Click"></Button>
+              
                 <TextBlock Text="User: Mike" RelativePanel.AlignHorizontalCenterWithPanel="True"></TextBlock>
                 <TextBlock Text="Version: 1.0.0" RelativePanel.AlignRightWithPanel="True"/>
             </RelativePanel>
         </Border>
+
+
+        <Grid Grid.Row="1">
+            <SplitView  DisplayMode="CompactOverlay" Name="mySplitView" CompactPaneLength="0" HorizontalAlignment="Stretch" OpenPaneLength="500">
+                <SplitView.Pane>
+                    <StackPanel Orientation="Vertical"   >
+                        <Button Name="sc2" Content="SC2" Click="sc2_Click" HorizontalAlignment="Stretch"></Button>
+                        <Button Name="lol" Content="LOL" Click="lol_Click" HorizontalAlignment="Stretch"></Button>
+                        <Button Name="sfv" Content="Street Flight V" Click="sfv_Click" HorizontalAlignment="Stretch"></Button>
+                    </StackPanel>
+                </SplitView.Pane>
+                <SplitView.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"></RowDefinition>
+                            <RowDefinition Height="8*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="GAME MACH OVERVIEW" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                        <Frame Name="MyFrame" Grid.Row="1" HorizontalAlignment="Center"></Frame>
+                    </Grid>
+                </SplitView.Content>
+            </SplitView>
+        </Grid>
     </Grid>
 </Page>
