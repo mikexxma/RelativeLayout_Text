@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="RelativePanel_Test.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RelativePanel_Test"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <RelativePanel Grid.Row="0">
+            <TextBlock Text="Title" FontSize="40" FontStyle="Oblique"></TextBlock>
+            <Button Name="searchButton" RelativePanel.AlignVerticalCenterWithPanel="True" Content="Search" FontSize="20" RelativePanel.AlignRightWithPanel="True" VerticalAlignment="Center" ></Button>
+            <TextBox  Name="searchText" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.LeftOf="searchButton" Width="80"></TextBox>
+            
+        </RelativePanel>
+        <Border Grid.Row="2" BorderBrush="BurlyWood" Background="Aquamarine">
+            <RelativePanel>
+                <TextBlock Text="item: 10"></TextBlock>
+                <TextBlock Text="User: Mike" RelativePanel.AlignHorizontalCenterWithPanel="True"></TextBlock>
+                <TextBlock Text="Version: 1.0.0" RelativePanel.AlignRightWithPanel="True"/>
+            </RelativePanel>
+        </Border>
+    </Grid>
+</Page>
